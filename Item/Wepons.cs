@@ -4,7 +4,7 @@ using NeoModLoader.General.Game;
 
 using UnityEngine;
 
-namespace ChoasWorld.Item
+namespace ChaosWorld.Item
 {
     internal class Wepons
     {
