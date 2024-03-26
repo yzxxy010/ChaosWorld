@@ -7,7 +7,8 @@ namespace ChoasWorld
     {
         protected override void OnModLoad()
         {
-            LogInfo("mod测试");
+            string temp = LM.Get("temp");
+            LogInfo(temp);
         }
     }
 }
