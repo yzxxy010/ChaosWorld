@@ -8,7 +8,7 @@
 
   <ItemGroup>
     <Reference Include="Assembly-CSharp">
-      <HintPath>..\..\..\..\XingYao\steam\steamapps\common\worldbox\worldbox_Data\Managed\Assembly-CSharp.dll</HintPath>
+      <HintPath>..\..\..\..\XingYao\steam\steamapps\common\worldbox\worldbox_Data\StreamingAssets\mods\NML\Assembly-CSharp-Publicized.dll</HintPath>
     </Reference>
     <Reference Include="NeoModLoader">
       <HintPath>..\..\..\..\XingYao\steam\steamapps\common\worldbox\worldbox_Data\StreamingAssets\mods\NeoModLoader.dll</HintPath>
