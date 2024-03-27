@@ -4,6 +4,7 @@ using NCMS.Utils;
 
 using NeoModLoader.General;
 using NeoModLoader.General.Game;
+using NeoModLoader.api;
 
 using ReflectionUtility;
 
@@ -15,6 +16,7 @@ namespace ChaosWorld.Item
     {
         public static void Init()
         {
+            Debug.Log("fuck!");
         }
     }
 }
