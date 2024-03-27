@@ -16,7 +16,7 @@ namespace ChaosWorld.Item
     {
         public static void Init()
         {
-            Debug.Log("fuck!");
+            Debug.Log("fuck u!!!!!!!!!!!!");
         }
     }
 }
