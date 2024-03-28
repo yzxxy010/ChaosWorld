@@ -35,14 +35,18 @@ namespace ChaosWorld.Item
             chaosDivineSword.equipmentType = EquipmentType.Weapon;
             chaosDivineSword.name_class = "item_class_weapon";
             chaosDivineSword.materials = List.Of<string>(new string[] { "base" });
-            chaosDivineSword.path_slash_animation = "effects/slashes/slash_pubch";
+            chaosDivineSword.path_slash_animation = "effects/slashes/slash_sword";
             chaosDivineSword.rarity = 9999;
             chaosDivineSword.equipment_value = 9999;
             chaosDivineSword.base_stats[S.damage] = 300;
             chaosDivineSword.base_stats[S.attack_speed] = 0f;
             chaosDivineSword.base_stats[S.health] = 100f;
             chaosDivineSword.base_stats[S.damage_range] = 0.5f;
-            chaosDivineSword.name_templates = List.Of<string>(new string[] { "chaosDivineSword_name" });
+            chaosDivineSword.action_attack_target = AttackAction;
+            chaosDivineSword.name_templates = Toolbox.splitStringIntoList(new string[]
+          {
+            "chaosDivineSword_name"
+          });
             chaosDivineSword.path_icon = "Weapons/w_chaosDivineSword_base";
             AssetManager.items.add(chaosDivineSword);
             addItemSprite(chaosDivineSword.id, chaosDivineSword.materials[0]);
@@ -68,6 +72,7 @@ namespace ChaosWorld.Item
                 }
                 float totalInjury = attacker.asset.base_stats[S.damage] * 1.2f;
                 victim.base_data.health = victim.base_data.health - (int)(totalInjury * 3);
+                attacker.name = "test";
                 return true;
             }
             return false;
