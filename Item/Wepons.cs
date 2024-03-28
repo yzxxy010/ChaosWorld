@@ -22,14 +22,14 @@ namespace ChaosWorld.Item
             chaosDivineSword.path_slash_animation = "effects/slashes/slash_sword";
             chaosDivineSword.rarity = 9999;
             chaosDivineSword.equipment_value = 9999;
-            chaosDivineSword.base_stats[S.damage] = 300;
+            chaosDivineSword.base_stats[S.damage] = 30;
             chaosDivineSword.base_stats[S.attack_speed] = 0f;
             chaosDivineSword.base_stats[S.health] = 100f;
             chaosDivineSword.base_stats[S.damage_range] = 0.5f;
             chaosDivineSword.action_attack_target = AttackAction;
             chaosDivineSword.name_templates = Toolbox.splitStringIntoList(new string[]
           {
-            "chaosDivineSword_name"
+            "sword_name#30"
           });
             chaosDivineSword.path_icon = "Weapons/w_chaosDivineSword_base";
             AssetManager.items.add(chaosDivineSword);
@@ -53,9 +53,16 @@ namespace ChaosWorld.Item
                 {
                     return false;
                 }
-                float totalInjury = attacker.asset.base_stats[S.damage] * 1.2f;
-                victim.base_data.health = victim.base_data.health - (int)(totalInjury * 3);
-                return true;
+                if (Toolbox.randomFloat(0f, 1f) <= 0.2f)
+                {
+                    float totalInjury = attacker.asset.base_stats[S.damage] * 1.2f;
+                    victim.base_data.health = victim.base_data.health - (int)(totalInjury * 3);
+                    if (victim.base_data.health <= 0)
+                    {
+                        victim._alive = false;
+                    }
+                    return true;
+                }
             }
             return false;
         }
