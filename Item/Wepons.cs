@@ -12,22 +12,6 @@ namespace ChaosWorld.Item
     {
         public static void Init()
         {
-            //BaseStats chaosSwordStats = new BaseStats();
-            //chaosSwordStats[S.damage] = 300;
-            //chaosSwordStats[S.attack_speed] = 0f;
-            //chaosSwordStats[S.health] = 100f;
-            //chaosSwordStats[S.damage_range] = 0.5f;
-            //ItemAsset chaosDivineSword = ItemAssetCreator.CreateMeleeWeapon(
-            //    id: "ChaosDivineSword",
-            //    base_stats: chaosSwordStats,
-            //    materials: new List<string> { "steel" },
-            //    name_templates: new List<string> { "混沌神剑", "混沌de大剑", "面向混沌!我就是神!", "编不下去了🥵" },
-            //    action_attack_target: AttackAction,
-            //    equipment_value: 9999,
-            //    name_class: "item_class_weapon"
-            //    );
-            //a
-            //
             ItemAsset chaosDivineSword = AssetManager.items.clone("chaosDivineSword", "sword");
             chaosDivineSword.id = "chaosDivineSword";
             chaosDivineSword.pool = "melee";
@@ -72,7 +56,6 @@ namespace ChaosWorld.Item
                 }
                 float totalInjury = attacker.asset.base_stats[S.damage] * 1.2f;
                 victim.base_data.health = victim.base_data.health - (int)(totalInjury * 3);
-                attacker.name = "test";
                 return true;
             }
             return false;
