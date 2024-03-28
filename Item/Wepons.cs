@@ -26,28 +26,34 @@ namespace ChaosWorld.Item
             //    equipment_value: 9999,
             //    name_class: "item_class_weapon"
             //    );
+            //a
             //
-            //
-            ItemAsset chaosDivineSword = new ItemAsset();
-            chaosDivineSword.id = "ChaosDivineSword";
+            ItemAsset chaosDivineSword = AssetManager.items.clone("chaosDivineSword", "sword");
+            chaosDivineSword.id = "chaosDivineSword";
+            chaosDivineSword.pool = "melee";
+            chaosDivineSword.attackType = WeaponType.Melee;
             chaosDivineSword.equipmentType = EquipmentType.Weapon;
-            chaosDivineSword.metallic = false;
-            chaosDivineSword.quality = ItemQuality.Legendary;
-            chaosDivineSword.name_templates = new List<string> { "chaosDivineSword#1" };
+            chaosDivineSword.name_class = "item_class_weapon";
+            chaosDivineSword.materials = List.Of<string>(new string[] { "base" });
+            chaosDivineSword.path_slash_animation = "effects/slashes/slash_pubch";
             chaosDivineSword.rarity = 9999;
             chaosDivineSword.equipment_value = 9999;
             chaosDivineSword.base_stats[S.damage] = 300;
             chaosDivineSword.base_stats[S.attack_speed] = 0f;
             chaosDivineSword.base_stats[S.health] = 100f;
             chaosDivineSword.base_stats[S.damage_range] = 0.5f;
-            Localization.addLocalization("item_" + chaosDivineSword.id, "temp");
-            addWeaponsSprite(chaosDivineSword);
+            chaosDivineSword.name_templates = List.Of<string>(new string[] { "chaosDivineSword_name" });
+            chaosDivineSword.path_icon = "Weapons/w_chaosDivineSword_base";
+            AssetManager.items.add(chaosDivineSword);
+            addItemSprite(chaosDivineSword.id, chaosDivineSword.materials[0]);
+            LM.Add("cz", "item_chaosDivineSword", "混沌神剑");
         }
 
-        private static void addWeaponsSprite(ItemAsset weapon)
+        public static void addItemSprite(string id, string material)
         {
-            Dictionary<string, Sprite> dictItems = Reflection.GetField(typeof(ActorAnimationLoader), null, "dictItems") as Dictionary<string, Sprite>;
-            foreach (string mat in weapon.materials) dictItems.Add("w_" + weapon.id + "_" + mat, Resources.Load<Sprite>("Weapons/w_" + weapon.id + "_" + mat));
+            var dictItems = Reflection.GetField(typeof(ActorAnimationLoader), null, "dictItems") as Dictionary<string, Sprite>;
+            var sprite = Resources.Load<Sprite>("Weapons/w_" + id + "_" + material);
+            dictItems.Add(sprite.name, sprite);
         }
 
         public static bool AttackAction(BaseSimObject pSelf, BaseSimObject pTarget, WorldTile pTile = null)
