@@ -34,7 +34,6 @@ namespace ChaosWorld.Item
             chaosDivineSword.path_icon = "Weapons/w_chaosDivineSword_base";
             AssetManager.items.add(chaosDivineSword);
             addItemSprite(chaosDivineSword.id, chaosDivineSword.materials[0]);
-            LM.Add("cz", "item_chaosDivineSword", "混沌神剑");
         }
 
         public static void addItemSprite(string id, string material)
