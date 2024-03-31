@@ -47,7 +47,7 @@ namespace ChaosWorld.Item
         {
             if (pSelf != null)
             {
-                Actor attacker = Reflection.GetField(pSelf.GetType(), pSelf, "a") as Actor;
+                Actor attacker = Reflection.GetField(pSelf.GetType(), pSelf, "a") as Actor!;
                 Actor victim = Reflection.GetField(pTarget.GetType(), pTarget, "a") as Actor;
                 if (victim == null)
                 {
