@@ -45,10 +45,9 @@ namespace ChaosWorld.Item
             knitter.rarity = 9999;
             knitter.equipment_value = 9999;
             knitter.base_stats[S.damage] = 45f;
-            knitter.base_stats[S.attack_speed] = 0.5f;
             knitter.base_stats[S.health] = 150f;
             knitter.base_stats[S.range] = 8f;
-            knitter.base_stats[S.armor] = 20f;
+            knitter.base_stats[S.knockback_reduction] = 0.2f;
             knitter.action_attack_target = ItemSkill.knitter_AttackAction;
             chaosDivineSword.name_templates = Toolbox.splitStringIntoList(new string[]
           {
@@ -57,6 +56,31 @@ namespace ChaosWorld.Item
             knitter.path_icon = "Weapons/w_knitter_base";
             AssetManager.items.add(knitter);
             addItemSprite(knitter.id, knitter.materials[0]);
+
+            ItemAsset dwarfKingGoldDraft = AssetManager.items.clone("dwarfKingGoldDraft", "axe");
+            dwarfKingGoldDraft.id = "dwarfKingGoldDraft";
+            dwarfKingGoldDraft.pool = "melee";
+            dwarfKingGoldDraft.attackType = WeaponType.Melee;
+            dwarfKingGoldDraft.equipmentType = EquipmentType.Weapon;
+            dwarfKingGoldDraft.name_class = "item_class_weapon";
+            dwarfKingGoldDraft.materials = List.Of<string>(new string[] { "base" });
+            dwarfKingGoldDraft.path_slash_animation = "effects/slashes/slash_axe";
+            dwarfKingGoldDraft.rarity = 9999;
+            dwarfKingGoldDraft.equipment_value = 9999;
+            dwarfKingGoldDraft.base_stats[S.damage] = 65;
+            dwarfKingGoldDraft.base_stats[S.health] = 330;
+            dwarfKingGoldDraft.base_stats[S.range] = 3f;
+            dwarfKingGoldDraft.base_stats[S.knockback] = 2.5f;
+            dwarfKingGoldDraft.base_stats[S.knockback_reduction] = 0.5f;
+            dwarfKingGoldDraft.action_special_effect = ItemSkill.dwarfKingGoldDraft_WorldAction;
+            dwarfKingGoldDraft.special_effect_interval = 10f;
+            dwarfKingGoldDraft.name_templates = Toolbox.splitStringIntoList(new string[]
+            {
+                "aex_name#30"
+            });
+            dwarfKingGoldDraft.path_icon = "Weapons/w_dwarfKingGoldDraft_base";
+            AssetManager.items.add(dwarfKingGoldDraft);
+            addItemSprite(dwarfKingGoldDraft.id, dwarfKingGoldDraft.materials[0]);
         }
 
         public static void addItemSprite(string id, string material)

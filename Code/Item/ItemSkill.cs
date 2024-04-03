@@ -56,5 +56,16 @@ namespace ChaosWorld.Item
             }
             return false;
         }
+
+        public static bool dwarfKingGoldDraft_WorldAction(BaseSimObject pTarget, WorldTile pTile)
+        {
+            if (pTarget != null)
+            {
+                Actor holders = Reflection.GetField(pTarget.GetType(), pTarget, "a") as Actor;
+                holders.addStatusEffect("invincible", 2f);
+                return true;
+            }
+            return false;
+        }
     }
 }
