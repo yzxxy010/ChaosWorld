@@ -13,7 +13,7 @@ namespace ChaosWorld.patch
         [HarmonyPrefix, HarmonyPatch(typeof(Actor), "getHit")]
         public static bool Prefix(float pDamage, ref bool pFlash, AttackType pAttackType, ref BaseSimObject pAttacker, bool pSkipIfShake, bool pMetallicWeapon)
         {
-            pSkipIfShake = false;
+            pSkipIfShake = !ChoasWorld.ChaosWorld.removeInvincibleFrames;
             return true;
         }
     }

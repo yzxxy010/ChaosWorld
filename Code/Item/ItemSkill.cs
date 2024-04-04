@@ -13,8 +13,8 @@ namespace ChaosWorld.Item
         {
             if (pSelf != null)
             {
-                Actor attacker = Reflection.GetField(pSelf.GetType(), pSelf, "a") as Actor;
-                Actor victim = Reflection.GetField(pTarget.GetType(), pTarget, "a") as Actor;
+                Actor attacker = pSelf.a;
+                Actor victim = pTarget.a;
                 if (victim == null)
                 {
                     return false;
@@ -37,8 +37,7 @@ namespace ChaosWorld.Item
         {
             if (pSelf != null)
             {
-                //Actor attacker = Reflection.GetField(pSelf.GetType(), pSelf, "a") as Actor;
-                Actor victim = Reflection.GetField(pTarget.GetType(), pTarget, "a") as Actor;
+                Actor victim = pTarget.a;
                 if (victim == null)
                 {
                     return false;
@@ -61,7 +60,7 @@ namespace ChaosWorld.Item
         {
             if (pTarget != null)
             {
-                Actor holders = Reflection.GetField(pTarget.GetType(), pTarget, "a") as Actor;
+                Actor holders = pTarget.a;
                 holders.addStatusEffect("invincible", 2f);
                 return true;
             }

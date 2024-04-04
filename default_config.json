@@ -1,0 +1,10 @@
+{
+  "chaosWorld config": [
+    {
+      "Id": "invincible frame",
+      "Type": "SWITCH",
+      "IconPath": "ui/icon/temp",
+      "BoolVal": true
+    }
+  ]
+}

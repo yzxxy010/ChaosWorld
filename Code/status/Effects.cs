@@ -17,7 +17,7 @@ namespace ChaosWorld.status
             heavyCurse.duration = 2f;
             heavyCurse.path_icon = "Effects/e_heavyCurse";
             heavyCurse.action = EffectAction.heavyCurse_WorldAction;
-            heavyCurse.action_interval = 3f;
+            heavyCurse.action_interval = 2f;
             AssetManager.status.add(heavyCurse);
         }
     }

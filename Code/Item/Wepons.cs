@@ -24,7 +24,7 @@ namespace ChaosWorld.Item
             chaosDivineSword.base_stats[S.damage] = 300f;
             chaosDivineSword.base_stats[S.attack_speed] = 0.5f;
             chaosDivineSword.base_stats[S.health] = 1000f;
-            chaosDivineSword.base_stats[S.range] = 0.5f;
+            chaosDivineSword.base_stats[S.range] = 2f;
             chaosDivineSword.action_attack_target = ItemSkill.chaosDivineSword_AttackAction;
             chaosDivineSword.name_templates = Toolbox.splitStringIntoList(new string[]
           {
@@ -34,19 +34,19 @@ namespace ChaosWorld.Item
             AssetManager.items.add(chaosDivineSword);
             addItemSprite(chaosDivineSword.id, chaosDivineSword.materials[0]);
 
-            ItemAsset knitter = AssetManager.items.clone("knitter", "bow");
+            ItemAsset knitter = AssetManager.items.clone("knitter", "spear");
             knitter.id = "knitter";
-            knitter.pool = "range";
-            knitter.attackType = WeaponType.Range;
+            knitter.pool = "melee";
+            knitter.attackType = WeaponType.Melee;
             knitter.equipmentType = EquipmentType.Weapon;
             knitter.name_class = "item_class_weapon";
             knitter.materials = List.Of<string>(new string[] { "base" });
-            knitter.path_slash_animation = "effects/slashes/slash_bow";
+            knitter.path_slash_animation = "effects/slashes/slash_spear";
             knitter.rarity = 9999;
             knitter.equipment_value = 9999;
             knitter.base_stats[S.damage] = 45f;
             knitter.base_stats[S.health] = 150f;
-            knitter.base_stats[S.range] = 8f;
+            knitter.base_stats[S.range] = 6f;
             knitter.base_stats[S.knockback_reduction] = 0.2f;
             knitter.action_attack_target = ItemSkill.knitter_AttackAction;
             chaosDivineSword.name_templates = Toolbox.splitStringIntoList(new string[]
@@ -68,7 +68,7 @@ namespace ChaosWorld.Item
             dwarfKingGoldDraft.rarity = 9999;
             dwarfKingGoldDraft.equipment_value = 9999;
             dwarfKingGoldDraft.base_stats[S.damage] = 65;
-            dwarfKingGoldDraft.base_stats[S.health] = 330;
+            dwarfKingGoldDraft.base_stats[S.health] = 430;
             dwarfKingGoldDraft.base_stats[S.range] = 3f;
             dwarfKingGoldDraft.base_stats[S.knockback] = 2.5f;
             dwarfKingGoldDraft.base_stats[S.knockback_reduction] = 0.5f;
@@ -76,7 +76,7 @@ namespace ChaosWorld.Item
             dwarfKingGoldDraft.special_effect_interval = 10f;
             dwarfKingGoldDraft.name_templates = Toolbox.splitStringIntoList(new string[]
             {
-                "aex_name#30"
+                "axe_name#30"
             });
             dwarfKingGoldDraft.path_icon = "Weapons/w_dwarfKingGoldDraft_base";
             AssetManager.items.add(dwarfKingGoldDraft);
