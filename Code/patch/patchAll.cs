@@ -12,8 +12,8 @@ namespace ChaosWorld.patch
         {
             Harmony harmony = new Harmony("xingyao.mod.worldbox.chaosWorld");
             harmony.PatchAll(typeof(removeInvincibleFrames));
-            harmony.PatchAll(typeof(attackSpeedMax));
-            AssetManager.base_stats_library.get(S.attack_speed).normalize_max = int.MaxValue;
+            actorAttribute.init(harmony);
+            projectileAttackSpeed.init();
         }
     }
 }

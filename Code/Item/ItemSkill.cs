@@ -67,18 +67,16 @@ namespace ChaosWorld.Item
             return false;
         }
 
-        public static bool heartOfTheFore_stStaff_AttackAction(BaseSimObject pSelf, BaseSimObject pTarget, WorldTile pTile = null)
+        public static bool heartOfTheFore_stStaff_WorldAction(BaseSimObject pTarget, WorldTile pTile = null)
         {
-            WorldTile worldTile = World.world.GetTile(pTarget.a.data.x, pTarget.a.data.y);
-
-            World.world.getObjectsInChunks(worldTile, 3, MapObjectType.Actor);
+            World.world.getObjectsInChunks(pTarget.currentTile, 3, MapObjectType.Actor);
             for (int i = 0; i < World.world.temp_map_objects.Count; i++)
             {
-                Debug.Log("heartOfTheFore_stStaff_AttackAction");
-
                 Actor actor = (Actor)World.world.temp_map_objects[i];
-                Debug.Log(actor.getName());
-                actor.setAlive(false);
+                if (actor != pTarget.a && actor.kingdom == pTarget.a.kingdom)
+                {
+                    actor.stats[S.health] += actor.getMaxHealth() * 0.1f;
+                }
             }
             return false;
         }

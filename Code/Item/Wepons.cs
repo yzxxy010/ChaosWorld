@@ -4,6 +4,7 @@ using NeoModLoader.General.Game;
 using NeoModLoader.api;
 using ReflectionUtility;
 using UnityEngine;
+using System;
 
 namespace ChaosWorld.Item
 {
@@ -27,10 +28,9 @@ namespace ChaosWorld.Item
             chaosDivineSword.base_stats[S.range] = 2f;
             chaosDivineSword.base_stats[S.knockback_reduction] = 99999f;
             chaosDivineSword.action_attack_target += ItemSkill.chaosDivineSword_AttackAction;
-            chaosDivineSword.name_templates = Toolbox.splitStringIntoList(new string[]
-          {
-            "sword_name#30"
-          });
+            chaosDivineSword.name_templates = Toolbox.splitStringIntoList(
+                new string[] { "sword_name#30" }
+            );
             chaosDivineSword.path_icon = "Weapons/w_chaosDivineSword_base";
             AssetManager.items.add(chaosDivineSword);
             addItemSprite(chaosDivineSword.id, chaosDivineSword.materials[0]);
@@ -50,10 +50,9 @@ namespace ChaosWorld.Item
             knitter.base_stats[S.range] = 6f;
             knitter.base_stats[S.knockback_reduction] = 0.2f;
             knitter.action_attack_target += ItemSkill.knitter_AttackAction;
-            chaosDivineSword.name_templates = Toolbox.splitStringIntoList(new string[]
-          {
-            "bow_name#30"
-          });
+            chaosDivineSword.name_templates = Toolbox.splitStringIntoList(
+                new string[] { "bow_name#30" }
+            );
             knitter.path_icon = "Weapons/w_knitter_base";
             AssetManager.items.add(knitter);
             addItemSprite(knitter.id, knitter.materials[0]);
@@ -75,19 +74,20 @@ namespace ChaosWorld.Item
             dwarfKingGoldDraft.base_stats[S.knockback_reduction] = 0.5f;
             dwarfKingGoldDraft.action_special_effect += ItemSkill.dwarfKingGoldDraft_WorldAction;
             dwarfKingGoldDraft.special_effect_interval = 10f;
-            dwarfKingGoldDraft.name_templates = Toolbox.splitStringIntoList(new string[]
-            {
-                "axe_name#30"
-            });
+            dwarfKingGoldDraft.name_templates = Toolbox.splitStringIntoList(
+                new string[] { "axe_name#30" }
+            );
             dwarfKingGoldDraft.path_icon = "Weapons/w_dwarfKingGoldDraft_base";
             AssetManager.items.add(dwarfKingGoldDraft);
             addItemSprite(dwarfKingGoldDraft.id, dwarfKingGoldDraft.materials[0]);
 
-            ItemAsset heartOfTheFore_stStaff = AssetManager.items.clone("heartOfTheFore_stStaff", "_range");
+            ItemAsset heartOfTheFore_stStaff = AssetManager.items.clone(
+                "heartOfTheFore_stStaff",
+                "spear"
+            );
             heartOfTheFore_stStaff.id = "heartOfTheFore_stStaff";
-            heartOfTheFore_stStaff.pool = "range";
-            heartOfTheFore_stStaff.attackType = WeaponType.Range;
-            heartOfTheFore_stStaff.projectile = "bone";
+            heartOfTheFore_stStaff.pool = "melee";
+            heartOfTheFore_stStaff.attackType = WeaponType.Melee;
             heartOfTheFore_stStaff.equipmentType = EquipmentType.Weapon;
             heartOfTheFore_stStaff.name_class = "item_class_weapon";
             heartOfTheFore_stStaff.materials = List.Of<string>(new string[] { "base" });
@@ -98,12 +98,12 @@ namespace ChaosWorld.Item
             heartOfTheFore_stStaff.base_stats[S.health] = 150f;
             heartOfTheFore_stStaff.base_stats[S.range] = 6f;
             heartOfTheFore_stStaff.base_stats[S.knockback_reduction] = 0.2f;
-            heartOfTheFore_stStaff.base_stats[S.attack_speed] = 99999f;
-            heartOfTheFore_stStaff.action_attack_target += ItemSkill.heartOfTheFore_stStaff_AttackAction;
-            heartOfTheFore_stStaff.name_templates = Toolbox.splitStringIntoList(new string[]
-            {
-                "necromancer_staff_name"
-            });
+            //heartOfTheFore_stStaff.base_stats[S.attack_speed] = 99999f;
+            heartOfTheFore_stStaff.action_special_effect += ItemSkill.heartOfTheFore_stStaff_WorldAction;
+            heartOfTheFore_stStaff.special_effect_interval = 5f;
+            heartOfTheFore_stStaff.name_templates = Toolbox.splitStringIntoList(
+                new string[] { "necromancer_staff_name" }
+            );
             heartOfTheFore_stStaff.path_icon = "Weapons/w_heartOfTheFore_stStaff_base";
             AssetManager.items.add(heartOfTheFore_stStaff);
             addItemSprite(heartOfTheFore_stStaff.id, heartOfTheFore_stStaff.materials[0]);
@@ -111,7 +111,9 @@ namespace ChaosWorld.Item
 
         public static void addItemSprite(string id, string material)
         {
-            var dictItems = Reflection.GetField(typeof(ActorAnimationLoader), null, "dictItems") as Dictionary<string, Sprite>;
+            var dictItems =
+                Reflection.GetField(typeof(ActorAnimationLoader), null, "dictItems")
+                as Dictionary<string, Sprite>;
             var sprite = Resources.Load<Sprite>("Weapons/w_" + id + "_" + material);
             dictItems.Add(sprite.name, sprite);
         }

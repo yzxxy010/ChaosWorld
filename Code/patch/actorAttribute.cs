@@ -9,8 +9,15 @@ using UnityEngine;
 
 namespace ChaosWorld.Code.patch
 {
-    internal class attackSpeedMax
+    internal class actorAttribute
     {
+        public static void init(Harmony harmony)
+        {
+            harmony.PatchAll(typeof(actorAttribute));
+            AssetManager.base_stats_library.get(S.attack_speed).normalize_max = int.MaxValue;
+            AssetManager.base_stats_library.get(S.armor).normalize_max = 90;
+        }
+
         [HarmonyTranspiler, HarmonyPatch(typeof(ActorBase), "updateStats")]
         public static IEnumerable<CodeInstruction> attackSpeedMax_1_Transpiler(
             IEnumerable<CodeInstruction> instructions

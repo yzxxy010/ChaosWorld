@@ -11,9 +11,10 @@ namespace ChaosWorld.patch
     internal class removeInvincibleFrames
     {
         [HarmonyPrefix, HarmonyPatch(typeof(Actor), "getHit")]
-        public static bool removeInvincibleFrames_Prefix(float pDamage, ref bool pFlash, AttackType pAttackType, ref BaseSimObject pAttacker, bool pSkipIfShake, bool pMetallicWeapon)
+        public static bool removeInvincibleFrames_Prefix(ref bool pSkipIfShake)
         {
             pSkipIfShake = !ChoasWorld.ChaosWorld.removeInvincibleFrames;
+
             return true;
         }
     }
