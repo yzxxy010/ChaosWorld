@@ -26,6 +26,7 @@
 
   <ItemGroup>
     <Folder Include="GameResources\Effects\" />
+    <Folder Include="GameResources\ui\items\" />
   </ItemGroup>
 
 </Project>

@@ -31,7 +31,7 @@ namespace ChaosWorld.Item
             chaosDivineSword.name_templates = Toolbox.splitStringIntoList(
                 new string[] { "sword_name#30" }
             );
-            chaosDivineSword.path_icon = "Weapons/w_chaosDivineSword_base";
+            chaosDivineSword.path_icon = "ui/items/w_chaosDivineSword_base";
             AssetManager.items.add(chaosDivineSword);
             addItemSprite(chaosDivineSword.id, chaosDivineSword.materials[0]);
 
@@ -53,7 +53,7 @@ namespace ChaosWorld.Item
             chaosDivineSword.name_templates = Toolbox.splitStringIntoList(
                 new string[] { "bow_name#30" }
             );
-            knitter.path_icon = "Weapons/w_knitter_base";
+            knitter.path_icon = "ui/items/w_knitter_base";
             AssetManager.items.add(knitter);
             addItemSprite(knitter.id, knitter.materials[0]);
 
@@ -77,7 +77,7 @@ namespace ChaosWorld.Item
             dwarfKingGoldDraft.name_templates = Toolbox.splitStringIntoList(
                 new string[] { "axe_name#30" }
             );
-            dwarfKingGoldDraft.path_icon = "Weapons/w_dwarfKingGoldDraft_base";
+            dwarfKingGoldDraft.path_icon = "ui/items/w_dwarfKingGoldDraft_base";
             AssetManager.items.add(dwarfKingGoldDraft);
             addItemSprite(dwarfKingGoldDraft.id, dwarfKingGoldDraft.materials[0]);
 
@@ -104,7 +104,7 @@ namespace ChaosWorld.Item
             heartOfTheFore_stStaff.name_templates = Toolbox.splitStringIntoList(
                 new string[] { "necromancer_staff_name" }
             );
-            heartOfTheFore_stStaff.path_icon = "Weapons/w_heartOfTheFore_stStaff_base";
+            heartOfTheFore_stStaff.path_icon = "ui/items/w_heartOfTheFore_stStaff_base";
             AssetManager.items.add(heartOfTheFore_stStaff);
             addItemSprite(heartOfTheFore_stStaff.id, heartOfTheFore_stStaff.materials[0]);
         }
@@ -114,7 +114,7 @@ namespace ChaosWorld.Item
             var dictItems =
                 Reflection.GetField(typeof(ActorAnimationLoader), null, "dictItems")
                 as Dictionary<string, Sprite>;
-            var sprite = Resources.Load<Sprite>("Weapons/w_" + id + "_" + material);
+            var sprite = Resources.Load<Sprite>("items/Weapons/w_" + id + "_" + material);
             dictItems.Add(sprite.name, sprite);
         }
     }
