@@ -1,0 +1,5 @@
+﻿key,cz,en
+button_cutCity_LR_name,城市分割(左右),City partition (left and right)
+button_cutCity_LR_desc,城市分割为两个城市，左右各一个,The city is divided into two cities，one on each side.
+button_cutCity_UD_name,城市分割(上下),City partition (up and down)
+button_cutCity_UD_desc,城市分割为两个城市，上下各一个,The city is divided into two cities，one above and one below.
