@@ -8,19 +8,19 @@
 
   <ItemGroup>
     <Reference Include="0Harmony">
-      <HintPath>..\..\..\..\XingYao\steam\steamapps\common\worldbox-ncms\worldbox_Data\StreamingAssets\mods\NCMS\Core\Assemblies\0Harmony.dll</HintPath>
+      <HintPath>..\..\..\..\..\XingYao\steam\steamapps\common\worldbox-ncms\worldbox_Data\StreamingAssets\mods\NCMS\Core\Assemblies\0Harmony.dll</HintPath>
     </Reference>
     <Reference Include="Assembly-CSharp">
-      <HintPath>..\..\..\..\XingYao\steam\steamapps\common\worldbox\worldbox_Data\StreamingAssets\mods\NML\Assembly-CSharp-Publicized.dll</HintPath>
+      <HintPath>..\..\..\..\..\XingYao\steam\steamapps\common\worldbox\worldbox_Data\StreamingAssets\mods\NML\Assembly-CSharp-Publicized.dll</HintPath>
     </Reference>
     <Reference Include="NeoModLoader">
-      <HintPath>..\..\..\..\XingYao\steam\steamapps\common\worldbox\worldbox_Data\StreamingAssets\mods\NeoModLoader.dll</HintPath>
+      <HintPath>..\..\..\..\..\XingYao\steam\steamapps\common\worldbox\worldbox_Data\StreamingAssets\mods\NeoModLoader.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.CoreModule">
-      <HintPath>..\..\..\..\XingYao\steam\steamapps\common\worldbox\worldbox_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
+      <HintPath>..\..\..\..\..\XingYao\steam\steamapps\common\worldbox\worldbox_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-      <HintPath>..\..\..\..\XingYao\steam\steamapps\common\worldbox\worldbox_Data\Managed\UnityEngine.UI.dll</HintPath>
+      <HintPath>..\..\..\..\..\XingYao\steam\steamapps\common\worldbox\worldbox_Data\Managed\UnityEngine.UI.dll</HintPath>
     </Reference>
   </ItemGroup>
 
