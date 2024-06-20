@@ -9,7 +9,7 @@ namespace ChaosWorld.Item
 {
     internal class ItemSkill
     {
-        public static bool chaosDivineSword_AttackAction(BaseSimObject pSelf, BaseSimObject pTarget, WorldTile pTile = null)
+        public static bool chaosDivineSword_AttackAction(BaseSimObject pSelf, BaseSimObject pTarget, WorldTile pTile)
         {
             if (pSelf != null)
             {
@@ -33,7 +33,7 @@ namespace ChaosWorld.Item
             return false;
         }
 
-        public static bool knitter_AttackAction(BaseSimObject pSelf, BaseSimObject pTarget, WorldTile pTile = null)
+        public static bool knitter_AttackAction(BaseSimObject pSelf, BaseSimObject pTarget, WorldTile pTile)
         {
             if (pSelf != null)
             {
@@ -56,7 +56,7 @@ namespace ChaosWorld.Item
             return false;
         }
 
-        public static bool dwarfKingGoldDraft_WorldAction(BaseSimObject pTarget, WorldTile pTile = null)
+        public static bool dwarfKingGoldDraft_WorldAction(BaseSimObject pTarget, WorldTile pTile)
         {
             if (pTarget != null)
             {
@@ -67,7 +67,7 @@ namespace ChaosWorld.Item
             return false;
         }
 
-        public static bool heartOfTheFore_stStaff_WorldAction(BaseSimObject pTarget, WorldTile pTile = null)
+        public static bool heartOfTheFore_stStaff_WorldAction(BaseSimObject pTarget, WorldTile pTile)
         {
             World.world.getObjectsInChunks(pTarget.currentTile, 3, MapObjectType.Actor);
             for (int i = 0; i < World.world.temp_map_objects.Count; i++)
