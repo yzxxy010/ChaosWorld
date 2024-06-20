@@ -47,7 +47,7 @@ namespace ChaosWorld.status
                         var statusEffectAsset = statusEffectData.asset;
                         time= statusEffectData.getRemainingTime();
                     }
-                    double resumption = 8-(20-time)*0.05;
+                    double resumption =damage * (8-(20-time)*0.05);
                     if (resumption < 0)
                     {
                         resumption = 1;
