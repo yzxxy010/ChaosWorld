@@ -2,4 +2,4 @@
 status_title_heavyCurse,沉重咒,Heavy Curse
 status_description_heavyCurse,降低攻速50%,Reduce Attack Speed by 50%
 status_title_bloodSucking,嗜血,blood sucking
-status_description_bloodSucking,攻击具有吸血效果，吸血比例随时间增长而增长,Attacks have a blood sucking effect， and the proportion of blood sucking increases over time
+status_description_bloodSucking,"攻击具有吸血效果，吸血比例随时间增长而增长","Attacks have a blood sucking effect,and the proportion of blood sucking increases over time"
