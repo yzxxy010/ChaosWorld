@@ -56,6 +56,21 @@ namespace ChaosWorld.Item
             return false;
         }
 
+        public static bool prophetSShepherdSStaff_AttackAction(BaseSimObject pSelf, BaseSimObject pTarget, WorldTile pTile)
+        {
+            //10%的概率，敌方血量上限-50%
+            if(pSelf != null)
+            {
+                Actor victim = pTarget.a;
+                Actor attacker = pSelf.a;
+                if (Toolbox.randomChance(0.1f))
+                {
+                    victim.stats[S.health] = victim.stats[S.health] * 0.5f;
+                }
+            }
+            return false;
+
+        }
         public static bool dwarfKingGoldDraft_WorldAction(BaseSimObject pTarget, WorldTile pTile)
         {
             if (pTarget != null)
@@ -80,5 +95,6 @@ namespace ChaosWorld.Item
             }
             return false;
         }
+
     }
 }

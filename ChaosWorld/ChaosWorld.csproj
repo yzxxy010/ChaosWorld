@@ -7,26 +7,22 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Reference Include="0Harmony">
-      <HintPath>..\..\..\..\..\XingYao\steam\steamapps\common\worldbox-ncms\worldbox_Data\StreamingAssets\mods\NCMS\Core\Assemblies\0Harmony.dll</HintPath>
-    </Reference>
-    <Reference Include="Assembly-CSharp">
-      <HintPath>..\..\..\..\..\XingYao\steam\steamapps\common\worldbox\worldbox_Data\StreamingAssets\mods\NML\Assembly-CSharp-Publicized.dll</HintPath>
-    </Reference>
-    <Reference Include="NeoModLoader">
-      <HintPath>..\..\..\..\..\XingYao\steam\steamapps\common\worldbox\worldbox_Data\StreamingAssets\mods\NeoModLoader.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.CoreModule">
-      <HintPath>..\..\..\..\..\XingYao\steam\steamapps\common\worldbox\worldbox_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.UI">
-      <HintPath>..\..\..\..\..\XingYao\steam\steamapps\common\worldbox\worldbox_Data\Managed\UnityEngine.UI.dll</HintPath>
-    </Reference>
+    <Folder Include="GameResources\Effects\" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="GameResources\Effects\" />
-    <Folder Include="GameResources\ui\items\" />
+    <Reference Include="0Harmony">
+      <HintPath>..\..\pc\Steam\steamapps\common\worldbox\worldbox_Data\StreamingAssets\mods\NML\Assemblies\0Harmony.dll</HintPath>
+    </Reference>
+    <Reference Include="Assembly-CSharp">
+      <HintPath>..\..\pc\Steam\steamapps\common\worldbox\worldbox_Data\StreamingAssets\mods\NML\Assembly-CSharp-Publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="NeoModLoader">
+      <HintPath>..\..\pc\Steam\steamapps\common\worldbox\worldbox_Data\StreamingAssets\mods\NeoModLoader.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>..\..\pc\Steam\steamapps\common\worldbox\worldbox_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>
