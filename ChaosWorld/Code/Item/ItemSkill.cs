@@ -9,7 +9,7 @@ namespace ChaosWorld.Item
 {
     internal class ItemSkill
     {
-        public static bool chaosDivineSword_AttackAction(BaseSimObject pSelf, BaseSimObject pTarget, WorldTile pTile)
+        public static bool chaosDivineSword_AttackAction(BaseSimObject pSelf, BaseSimObject pTarget, WorldTile pTile = null)
         {
             if (pSelf != null)
             {
@@ -33,7 +33,7 @@ namespace ChaosWorld.Item
             return false;
         }
 
-        public static bool knitter_AttackAction(BaseSimObject pSelf, BaseSimObject pTarget, WorldTile pTile)
+        public static bool knitter_AttackAction(BaseSimObject pSelf, BaseSimObject pTarget, WorldTile pTile = null)
         {
             if (pSelf != null)
             {
@@ -56,22 +56,7 @@ namespace ChaosWorld.Item
             return false;
         }
 
-        public static bool prophetSShepherdSStaff_AttackAction(BaseSimObject pSelf, BaseSimObject pTarget, WorldTile pTile)
-        {
-            //10%的概率，敌方血量上限-50%
-            if(pSelf != null)
-            {
-                Actor victim = pTarget.a;
-                Actor attacker = pSelf.a;
-                if (Toolbox.randomChance(0.1f))
-                {
-                    victim.stats[S.health] = victim.stats[S.health] * 0.5f;
-                }
-            }
-            return false;
-
-        }
-        public static bool dwarfKingGoldDraft_WorldAction(BaseSimObject pTarget, WorldTile pTile)
+        public static bool dwarfKingGoldDraft_WorldAction(BaseSimObject pTarget, WorldTile pTile = null)
         {
             if (pTarget != null)
             {
@@ -82,7 +67,7 @@ namespace ChaosWorld.Item
             return false;
         }
 
-        public static bool heartOfTheFore_stStaff_WorldAction(BaseSimObject pTarget, WorldTile pTile)
+        public static bool heartOfTheFore_stStaff_WorldAction(BaseSimObject pTarget, WorldTile pTile = null)
         {
             World.world.getObjectsInChunks(pTarget.currentTile, 3, MapObjectType.Actor);
             for (int i = 0; i < World.world.temp_map_objects.Count; i++)
@@ -95,6 +80,5 @@ namespace ChaosWorld.Item
             }
             return false;
         }
-
     }
 }

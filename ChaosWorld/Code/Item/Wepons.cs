@@ -107,28 +107,6 @@ namespace ChaosWorld.Item
             heartOfTheFore_stStaff.path_icon = "ui/items/w_heartOfTheFore_stStaff_base";
             AssetManager.items.add(heartOfTheFore_stStaff);
             addItemSprite(heartOfTheFore_stStaff.id, heartOfTheFore_stStaff.materials[0]);
-
-
-            ItemAsset prophetSShepherdSStaff = AssetManager.items.clone("prophetSShepherdSStaff", "axe");
-            prophetSShepherdSStaff.id = "prophetSShepherdSStaff";
-            prophetSShepherdSStaff.pool = "axe";
-            prophetSShepherdSStaff.attackType = WeaponType.Melee;
-            prophetSShepherdSStaff.equipmentType = EquipmentType.Weapon;
-            prophetSShepherdSStaff.name_class = "item_class_weapon";
-            prophetSShepherdSStaff.materials = List.Of<string>(new string[] { "base" });
-            prophetSShepherdSStaff.path_slash_animation = "effects/slashes/slash_axe";
-            prophetSShepherdSStaff.rarity = 9999;
-            prophetSShepherdSStaff.equipment_value = 9999;
-            prophetSShepherdSStaff.base_stats[S.damage] = 60f;
-            prophetSShepherdSStaff.base_stats[S.health] = 700f;
-            prophetSShepherdSStaff.base_stats[S.range] = 2f;
-            prophetSShepherdSStaff.base_stats[S.knockback_reduction] = 0.8f;
-            prophetSShepherdSStaff.action_attack_target += ItemSkill.prophetSShepherdSStaff_AttackAction;
-            prophetSShepherdSStaff.name_templates = Toolbox.splitStringIntoList(new string[] { "prophetSShepherdSStaff_name" });
-            prophetSShepherdSStaff.path_icon = "ui/items/w_prophetSShepherdSStaff_base";
-            AssetManager.items.add(prophetSShepherdSStaff);
-            addItemSprite(prophetSShepherdSStaff.id, prophetSShepherdSStaff.materials[0]);
-
         }
 
         public static void addItemSprite(string id, string material)
